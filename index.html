@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üç El Teknik | Beyaz Eşya, Kombi & Klima Servisi</title>
+    <title>Üç El Teknik | Avcılar Beyaz Eşya, Kombi & Klima Servisi</title>
+    <meta name="description" content="İstanbul Avcılar'da beyaz eşya, kombi ve klima tamir servisi. 7/24 acil servis, uygun fiyat garantisi ve uzman teknik ekibimizle hizmetinizdeyiz.">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -12,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Temel Stiller */
         * {
             margin: 0;
             padding: 0;
@@ -71,12 +71,12 @@
             margin-right: auto;
         }
 
-        /* Hizmetler Kartları */
+        /* Hizmetler Bölümü */
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .service-card {
@@ -98,34 +98,63 @@
             margin-bottom: 1rem;
         }
 
-        /* İletişim Formu */
-        .contact-form {
+        /* Yeni Eklenen Yatay Resim Galerisi */
+        .product-gallery {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            margin: 2rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: #3498db #f1f1f1;
+        }
+
+        .product-gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* İletişim Bölümü */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        input, textarea {
+        .contact-info div {
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-info i {
+            font-size: 1.5rem;
+            color: #3498db;
+            min-width: 30px;
+        }
+
+        .google-map iframe {
             width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        button {
-            background: #3498db;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: #2980b9;
+            height: 400px;
+            border: 0;
+            border-radius: 10px;
         }
 
         /* Responsive Tasarım */
@@ -137,10 +166,17 @@
             .menu-toggle {
                 display: block;
                 font-size: 1.5rem;
+                color: white;
             }
 
-            .service-grid {
+            .service-grid,
+            .contact-section {
                 grid-template-columns: 1fr;
+            }
+
+            .product-gallery img {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -159,35 +195,67 @@
     </header>
 
     <main>
-        <section id="hizmetler" class="service-section">
+        <!-- Hizmetler Bölümü -->
+        <section id="hizmetler">
             <h2>Hizmetlerimiz</h2>
             <div class="service-grid">
                 <div class="service-card">
                     <i class="fas fa-snowflake"></i>
-                    <h3>Klima Tamiri</h3>
-                    <p>Gaz dolumu, filtre temizliği ve montaj hizmetleri</p>
+                    <h3>Klima Servisi</h3>
+                    <p>Montaj, gaz dolumu, filtre temizliği ve tamir hizmetleri</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-fire"></i>
                     <h3>Kombi Servisi</h3>
-                    <p>Arıza giderme ve periyodik bakım</p>
+                    <p>Arıza giderme, bakım ve tamir işlemleri</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-blender"></i>
                     <h3>Beyaz Eşya</h3>
-                    <p>Buzdolabı, çamaşır makinesi tamiri</p>
+                    <p>Buzdolabı, çamaşır makinesi, bulaşık makinesi tamiri</p>
                 </div>
             </div>
+
+            <!-- Yeni Eklenen Yatay Resim Galerisi -->
+           <div class="product-gallery">
+    <img src="https://cdn.cimri.io/image/1200x1200/daikin-sensira-ftxf42e-14000-btuh-a-inverter-klima_643356413.jpg" alt="Klima">
+    <img src="https://ideacdn.net/idea/dp/70/myassets/products/008/beko-970476-mb-no-frost-buzdolabi-9.jpg?revision=1738665359" alt="Buzdolabı">
+    <img src="https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/36657/uploads/urunresimleri/buyuk/demirdokum-nitromix-p-24-dg-hep-yogusm-08ff29.png" alt="Kombi">
+    <img src="https://ideacdn.net/idea/jv/25/myassets/products/660/arcelik-9123-wf-9-kg-camasir-makinesi.png?revision=1731895689" alt="Çamaşır Makinesi">
+    <img src="https://cdn.dsmcdn.com/ty1570/prod/QC/20240925/11/bf2aa020-c15a-39a7-8e96-c141cf0c3c00/1_org_zoom.jpg" alt="Bulaşık Makinesi">
+</div>
+
+
         </section>
 
+        <!-- İletişim Bölümü -->
         <section id="iletisim">
             <h2>İletişim</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Adınız" required>
-                <input type="email" placeholder="E-posta" required>
-                <textarea rows="5" placeholder="Mesajınız"></textarea>
-                <button type="submit">Gönder</button>
-            </form>
+            <div class="contact-section">
+                <div class="google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d895.3673254852364!2d28.705966420482657!3d40.98926035270783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4a68e549666ee793%3A0xc6ddd2faadb9902b!2zw5zDh0VMIFRFS07EsEsgQmV5YXogZcWfeWEgLCBLb21iaSwgS2xpbWEsIMOHYW1hxZ_EsXIgdmUgQnVsYcWfxLFrIE1ha2luZXNpLCBUYW1pciwgQmFrxLFtLCBPbmFyxLFtLCBNb250YWosIFNlcnZpcw!5e0!3m2!1str!2str!4v1739216869649!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Adres: Cihangir mah., Karınca Sk. 13-9, 34310 Avcılar/İstanbul</p>
+                    </div>
+                    
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p><a href="tel:+902124224588">0212 422 45 88</a></p>
+                            <p><a href="tel:+905327234113">0532 723 41 13</a></p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <i class="fas fa-clock"></i>
+                        <p>Çalışma Saatleri:<br>Pazartesi - Cumartesi: 08:00 - 19:00</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -202,19 +270,12 @@
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Form Gönderimi
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağız.');
-            e.target.reset();
         });
     </script>
 </body>
